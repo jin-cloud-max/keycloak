@@ -1,11 +1,11 @@
 {
-    "realm": "myrealm",
-    "auth-server-url": "http://127.0.0.1:8080/auth/",
+    "realm": "av-tech",
+    "auth-server-url": "http://localhost:8080/auth/",
     "ssl-required": "external",
-    "resource": "myclient",
+    "resource": "teste",
     "verify-token-audience": true,
     "credentials": {
-        "secret": "b73f5d1c-1015-41cd-b661-8ab513a26366"
+        "secret": "6593d14c-c7ce-4a99-ba6a-3ecbb921508e"
     },
     "confidential-port": 0,
     "policy-enforcer": {}

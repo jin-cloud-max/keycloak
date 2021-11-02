@@ -20,7 +20,7 @@ const kcAdminCLient = new keyCloakAdminClient({
 app.use(express.json())
 app.use(cors())
 
-app.get("/2", async (request, response) => {
+app.post("/users", async (request, response) => {
     try {
         const { name, email } = request.body
 
@@ -57,8 +57,12 @@ app.use(keycloak.middleware({
     logout: "/logout"
 }))
 
-
 app.get("/", keycloak.protect(), (request, response) => {
+    return response.status(200).json({ message: "success" })
+})
+app.get("/enforcer", keycloak.enforcer(['asset-01:write', 'asset-01:read'], {
+    resource_server_id: 'teste'
+}), (request, response) => {
     return response.status(200).json({ message: "Passed" })
 })
 
