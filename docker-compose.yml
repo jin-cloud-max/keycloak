@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  database:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=keycloak
+    volumes: 
+      - pgdata:/data/postgres
+
+  keycloak: 
+    image: quay.io/keycloak/keycloak:15.0.2
+    environment: 
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+
+volumes: 
+  pgdata: 
+    driver: local    

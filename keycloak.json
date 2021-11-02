@@ -1,0 +1,12 @@
+{
+    "realm": "myrealm",
+    "auth-server-url": "http://127.0.0.1:8080/auth/",
+    "ssl-required": "external",
+    "resource": "myclient",
+    "verify-token-audience": true,
+    "credentials": {
+        "secret": "b73f5d1c-1015-41cd-b661-8ab513a26366"
+    },
+    "confidential-port": 0,
+    "policy-enforcer": {}
+}
